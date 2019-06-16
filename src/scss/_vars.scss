@@ -1,0 +1,81 @@
+$aos-distance: 25px; // It has to be above import
+@import "node_modules/aos/src/sass/aos.scss";
+
+//sizing
+$base-em: 14;
+$base-em-l: $base-em + 1;
+$base-em-xl: $base-em + 2;
+$full-grid: true;
+// Max width for container
+$container-width: 1300px;
+// Gutter size
+$gutter: 2.5rem;
+@custom-media --extra-extra-large (width>=1920px);
+@custom-media --past-container (width>=1300px);
+@custom-media --extra-extra-small (width<360px);
+
+$white: #fff;
+$black: #333333;
+$gray: #5f5f5f;
+$red: red;
+$light_orange: #ff9f1c;
+$orange: #c9652f;
+$green: #2ecc71;
+$purple: #332086;
+$light_purple: #4b4d9d;
+$deep_purple: #190d53;
+$border: lightgray;
+$primary: $green;
+$secondary: $orange;
+
+$bg_offwhite: #f2f3f9;
+$bg_softwhite: #f7f7f7;
+$bg_gray: #f7f7f7;
+$nav: #190d53;
+$homeNav: #342c6b;
+$pink: #ec3967;
+$pink_text: #f9a0b7;
+$pink_dark: #ca2550;
+$blue: #49b0e3;
+$space: #38209c;
+$space_dark: #1b0f52;
+
+$page_title: #5f5f5f;
+$input_border: #e0e2ec;
+
+$datGoodBounce: cubic-bezier(0.68, -0.1, 0.265, 1.55);
+
+// brands
+
+//eyemed
+$color_leaf: #227b13;
+$color_grape: #9f248f;
+$color_lips: #b5055b;
+$color_sun: #c43400;
+
+$color_leaf_bg: #36982e;
+$color_grape_bg: #9f248f;
+$color_lips_bg: #e40571;
+$color_sun_bg: #eb5100;
+
+//makino
+$color_makino_blue: #3676bb;
+$color_makino_blue_light: #30b0c7;
+$color_makino_bg: #457cbe;
+$color_makino_dark_bg: $black;
+
+//mercy
+$color_mercy_green: #009a44;
+$color_mercy_blue: #075aaa;
+
+// NN
+$color_natty_blue: #0a93d5;
+
+//Eckrich
+$color_eckrich_green: #1a5632;
+$color_eckrich_gold: #bc9a5c;
+
+//LEM
+$color_lem_green: #0a3a1b;
+$color_lem_brown: #341200;
+$color_lem_orange: #de713d;

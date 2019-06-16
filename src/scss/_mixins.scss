@@ -1,0 +1,405 @@
+@function remify($number) {
+  @return ($number/$base-em) + rem;
+}
+
+@function divide($number1, $number2) {
+  @return ($number1/$number2);
+}
+
+@mixin strip-appearance {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin block-label {
+  display: block;
+  margin: 0;
+  color: $gray;
+  font-family: inherit;
+  color: $black;
+  @include font-sizing(18, 36);
+  font-weight: 600;
+  .validation-message {
+    display: inline-block;
+    @include font-sizing(16, 24);
+    font-weight: 500;
+    &:before {
+      content: "";
+      margin: 0 0.25rem 0 0;
+    }
+  }
+}
+
+@mixin remove-link-styles {
+  text-decoration: none;
+  margin: 0;
+  color: inherit;
+  &:focus,
+  &:active,
+  &.active,
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+@mixin create-link-styles($color, $hover-color, $text-decoration: underline) {
+  color: $color;
+  cursor: pointer;
+  &:focus,
+  &:active,
+  &.active,
+  &:hover {
+    text-decoration: $text-decoration;
+    color: $hover-color;
+  }
+}
+
+@mixin create-sexy-link-styles(
+  $color,
+  $hover-color,
+  $text-decoration: underline
+) {
+  color: $color;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  word-break: break-word;
+  @media (--extra-small) {
+    text-decoration: underline;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $hover-color;
+    transition: height 0.1222s ease;
+    z-index: -1;
+    @media (--extra-small) {
+      display: none;
+    }
+  }
+  &:focus,
+  &:active,
+  &.active,
+  &:hover {
+    text-decoration: $text-decoration;
+    color: white;
+    &:after {
+      height: 100%;
+    }
+    @media (--extra-small) {
+      color: $color;
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin create-sexy-link-styles-match-bg(
+  $color,
+  $hover-color,
+  $text-decoration: underline
+) {
+  color: $color;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  word-break: break-word;
+  @media (--extra-small) {
+    text-decoration: underline;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    left: -2.5%;
+    bottom: 0;
+    width: 105%;
+    background-color: $color;
+    transition: height 0.1222s ease;
+    z-index: -1;
+    @media (--extra-small) {
+      display: none;
+    }
+  }
+  &:focus,
+  &:active,
+  &.active,
+  &:hover {
+    text-decoration: $text-decoration;
+    color: $hover-color;
+    &:after {
+      height: 100%;
+    }
+    @media (--extra-small) {
+      color: $color;
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin stripped-input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $primary;
+  min-height: 1.5rem;
+}
+
+@mixin font-sizing(
+  $mobileSize,
+  $mobileLine,
+  $desktopSize: $mobileSize,
+  $desktopLine: $mobileLine
+) {
+  font-size: remify($mobileSize);
+  line-height: divide($mobileLine, $mobileSize);
+  @media (--extra-large) {
+    font-size: remify($desktopSize);
+    line-height: divide($desktopLine, $desktopSize);
+  }
+}
+
+$navHeight: remify(65);
+
+@mixin max-mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin max-tablet {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin button-colors($bg, $color: white) {
+  color: $color;
+  background-color: $bg;
+  // background-image: linear-gradient(
+  //   to right,
+  //   $bg 0%,
+  //   lighten($bg, 19.125%) 51%,
+  //   $bg 100%
+  // );
+  &.bordered {
+    border: 3px solid $color;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 110%;
+      height: 110%;
+      max-width: 0%;
+      max-height: 0%;
+      background-color: $color;
+      border-radius: 100px;
+      z-index: -1;
+      transition: max-width 0.3s $datGoodBounce, max-height 0.3s $datGoodBounce;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      color: white;
+      &:after {
+        max-width: 110%;
+        max-height: 110%;
+      }
+    }
+  }
+}
+
+@mixin remove-button-colors {
+  background-image: none;
+  background-color: none;
+}
+
+@mixin wide {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin tall {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin bounceHover() {
+  transition: transform 0.2s $datGoodBounce, box-shadow 0.2s ease-out;
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.075);
+  }
+}
+
+@mixin softShadow() {
+  box-shadow: 5px 5px 33px 10px (rgba(0, 0, 0, 0.0725));
+}
+
+@mixin mediumShadow() {
+  box-shadow: 5px 5px 33px 10px (rgba(0, 0, 0, 0.145));
+}
+
+@mixin tightSoftShadow() {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+@mixin tightenTitle() {
+  @media (--extra-large) {
+    .title-column {
+      flex: 0 1 41.66667%;
+      max-width: 41.66667%;
+    }
+    .content-column {
+      margin-left: 8.33333%;
+    }
+    &.reverse {
+      .title-column {
+        margin-left: 8.33333%;
+      }
+      .content-column {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes marquee-reverse {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@mixin navCta {
+  min-width: 0;
+  position: relative;
+  //overflow: hidden;
+  padding: 0 1.5rem;
+  font-size: remify(13);
+  line-height: 1;
+  text-transform: uppercase;
+  height: remify(30);
+  border-radius: remify(15);
+  background-color: transparent;
+  color: #413e96;
+  margin-left: 1rem;
+  z-index: 1;
+  background-color: white;
+  // letter-spacing: 0;
+  transition: color 0.3s $datGoodBounce;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+    max-width: 0%;
+    max-height: 0%;
+    background-color: #413e96;
+    border-radius: 100px;
+    z-index: -1;
+    transition: max-width 0.3s $datGoodBounce, max-height 0.3s $datGoodBounce;
+  }
+  &:hover {
+    color: white !important;
+    &:after {
+      max-width: 110%;
+      max-height: 110%;
+    }
+  }
+}
+
+@mixin makeButton {
+  @include remove-link-styles;
+  @include create-link-styles(white, white, none);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  font-size: remify(16);
+  min-width: remify(225);
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-radius: 100px;
+  height: remify(50);
+  &.sm {
+    min-width: 0;
+  }
+  @include button-colors($blue);
+  &.pink {
+    @include button-colors($pink);
+  }
+  &.green {
+    @include button-colors($green);
+  }
+  &.white {
+    &.space {
+      @include button-colors($white, $space);
+    }
+    &.pink {
+      @include button-colors($white, $pink);
+    }
+    &.blue {
+      @include button-colors($white, $blue);
+    }
+  }
+  &.transparent {
+    &.space {
+      @include button-colors(transparent, $space);
+    }
+    &.pink {
+      @include button-colors(transparent, $pink);
+    }
+    &.blue {
+      @include button-colors(transparent, $blue);
+    }
+  }
+  &:disabled {
+    @include button-colors($space_dark);
+  }
+}
