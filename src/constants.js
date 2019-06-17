@@ -2,6 +2,7 @@ export const prismicEndpoint = "https://carterknifeco.cdn.prismic.io/api/v2";
 
 import linkResolver from "@/utils/link-resolver";
 import htmlSerializer from "@/utils/html-serializer";
+import simpleHtmlSerializer from "@/utils/simple-html-serializer";
 import prismicDOM from "prismic-dom";
 
 export const objectSize = function(obj) {

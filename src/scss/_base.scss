@@ -1,0 +1,31 @@
+:root {
+  font-size: $base-em + px;
+  // @media (--extra-large) {
+  //   font-size: $base-em-l + px;
+  // }
+}
+
+* + * {
+  margin-top: 0;
+  margin-top: unset;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Work Sans", sans-serif;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+}
+body {
+}
+
+@media (--large) {
+  [column~="l-fifths"] {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 20%;
+    flex: 0 1 20%;
+    max-width: 20%;
+  }
+}

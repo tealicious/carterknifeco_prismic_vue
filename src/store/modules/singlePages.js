@@ -5,8 +5,7 @@ const state = {
   pageSections: {},
   allPagesLoaded: false,
   pagesLoaded: [],
-  currentPage: {},
-  jobs: null
+  currentPage: {}
 };
 
 const getters = {

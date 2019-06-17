@@ -10,6 +10,7 @@ $full-grid: true;
 $container-width: 1300px;
 // Gutter size
 $gutter: 2.5rem;
+$until-large: 959px;
 @custom-media --extra-extra-large (width>=1920px);
 @custom-media --past-container (width>=1300px);
 @custom-media --extra-extra-small (width<360px);
@@ -28,6 +29,7 @@ $border: lightgray;
 $primary: $green;
 $secondary: $orange;
 
+$offwhite: #f5f3f0;
 $bg_offwhite: #f2f3f9;
 $bg_softwhite: #f7f7f7;
 $bg_gray: #f7f7f7;

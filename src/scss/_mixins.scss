@@ -169,6 +169,22 @@
   min-height: 1.5rem;
 }
 
+@mixin fontSizing(
+  $mobileSize,
+  $mobileLine,
+  $desktopSize: $mobileSize,
+  $desktopLine: $mobileLine
+) {
+  font-size: remify($mobileSize);
+  line-height: divide($mobileLine, $mobileSize);
+  margin-bottom: remify(divide($mobileSize, 3));
+  @media (--large) {
+    font-size: remify($desktopSize);
+    line-height: divide($desktopLine, $desktopSize);
+    margin-bottom: remify(divide($desktopSize, 3));
+  }
+}
+
 @mixin font-sizing(
   $mobileSize,
   $mobileLine,

@@ -1,5 +1,5 @@
 <template>
-  <hero :page="page"></hero>
+  <hero :section="page.hero.primary" v-if="page.hero"></hero>
 </template>
 
 <script>
