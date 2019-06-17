@@ -2,7 +2,6 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store/store";
-import AOS from "aos";
 import AppImage from "@atoms/Image";
 import PreFetchRouterLink from "@atoms/PreFetchRouterLink";
 import AppBackgroundImage from "@atoms/BackgroundImage";
@@ -15,13 +14,8 @@ Vue.component("background-image", AppBackgroundImage);
 Vue.component("pre-fetch-router-link", PreFetchRouterLink);
 
 new Vue({
-  mounted() {
-    AOS.init({
-      disable: "phone",
-      easing: "cubic-bezier(.68,-.1,.265,1.55)",
-      offset: 100,
-      once: true
-    });
+  beforeCreate() {
+    store.dispatch("getGlobal");
   },
   router,
   store,

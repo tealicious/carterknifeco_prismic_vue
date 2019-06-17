@@ -16,7 +16,7 @@ export default {
       return this.$route;
     }
   },
-  mounted() {
+  beforeCreate() {
     this.$store.dispatch("getSinglePage", this.$route.name);
   }
 };
