@@ -118,25 +118,27 @@ export const sectionBySliceType = (data, section, i) => {
 
 export const createSectionsBySlice = function(doc) {
   const newObject = { ...doc };
-  const body = [...doc.body];
-  let count = {};
-  body.map(section => {
-    let label = section.slice_type;
-    count[label] = 1;
-  });
-  body.map((section, i) => {
-    let label = section.slice_type;
-    if (newObject[label] !== undefined) {
-      newObject[`${label}_${count[label] + 1}`] = sectionBySliceType(
-        body,
-        section,
-        i
-      );
-      count[label] += 1;
-    } else {
-      newObject[label] = sectionBySliceType(body, section, i);
-    }
-  });
+  if (doc.body) {
+    const body = [...doc.body];
+    let count = {};
+    body.map(section => {
+      let label = section.slice_type;
+      count[label] = 1;
+    });
+    body.map((section, i) => {
+      let label = section.slice_type;
+      if (newObject[label] !== undefined) {
+        newObject[`${label}_${count[label] + 1}`] = sectionBySliceType(
+          body,
+          section,
+          i
+        );
+        count[label] += 1;
+      } else {
+        newObject[label] = sectionBySliceType(body, section, i);
+      }
+    });
+  }
   const allSectionsReady = setSectionRichText(newObject);
   return allSectionsReady;
 };

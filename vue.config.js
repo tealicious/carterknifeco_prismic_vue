@@ -13,13 +13,11 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        "@svg": path.resolve(__dirname, "src/components/00-svg"),
-        "@particles": path.resolve(__dirname, "src/components/01-particles"),
-        "@atoms": path.resolve(__dirname, "src/components/02-atoms"),
-        "@molecules": path.resolve(__dirname, "src/components/03-molecules"),
-        "@organisms": path.resolve(__dirname, "src/components/04-organisms"),
-        "@sections": path.resolve(__dirname, "src/components/05-sections"),
-        "@views": path.resolve(__dirname, "src/components/06-views"),
+        "@atoms": path.resolve(__dirname, "src/components/00-atoms"),
+        "@molecules": path.resolve(__dirname, "src/components/01-molecules"),
+        "@organisms": path.resolve(__dirname, "src/components/02-organisms"),
+        "@sections": path.resolve(__dirname, "src/components/03-sections"),
+        "@views": path.resolve(__dirname, "src/views"),
         "@icons": path.resolve(__dirname, "src/assets/icons"),
         "@utils": path.resolve(__dirname, "src/utils"),
         "@mixins": path.resolve(__dirname, "src/mixins"),
