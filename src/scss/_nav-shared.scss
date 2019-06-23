@@ -1,0 +1,18 @@
+nav.main {
+  z-index: 999;
+  background-color: white;
+  svg {
+    * {
+      fill: $primary;
+    }
+  }
+  &.mobile,
+  &.desktop {
+    a:not(.button) {
+      color: $primary;
+    }
+    input {
+      color: $black;
+    }
+  }
+}

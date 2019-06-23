@@ -10,9 +10,7 @@
   </router-link>
 </template>
 <script>
-import preFetchHelper from "@mixins/preFetchHelper";
 export default {
-  mixins: [preFetchHelper],
   props: {
     page: {
       required: true
@@ -20,6 +18,26 @@ export default {
     tag: {
       type: String,
       default: "a"
+    }
+  },
+  methods: {
+    route(route) {
+      let url;
+      switch (route.type) {
+        case "knife_page":
+          url = `/knife/${route.uid}`;
+          break;
+        default:
+          if (route.uid === "home") {
+            url = `/`;
+          } else {
+            url = `/${route.uid}`;
+          }
+      }
+      return url;
+    },
+    preFetch(route) {
+      this.$store.dispatch("preFetchPage", route.id);
     }
   }
 };

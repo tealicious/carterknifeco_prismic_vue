@@ -5,7 +5,8 @@
   @media (--large) {
     flex-direction: row;
   }
-  > div {
+  > div,
+  > a {
     flex: 0 1 56.25%;
     position: relative;
     &.content {
@@ -140,5 +141,11 @@
     nav {
       display: inline-block;
     }
+  }
+}
+
+.featured-knife-hero {
+  h1 {
+    text-transform: capitalize;
   }
 }

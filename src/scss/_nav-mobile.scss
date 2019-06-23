@@ -1,0 +1,152 @@
+$iconHeights: remify($headerHeight * 0.4);
+nav.main.mobile {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  left: 0;
+  top: 0;
+  min-height: remify($headerHeight);
+  transition: min-height 0.3s ease;
+  ul {
+    padding: 0;
+  }
+  .header {
+    svg {
+      height: $iconHeights;
+      width: $iconHeights;
+    }
+    z-index: 1;
+    background-color: white;
+    position: fixed;
+    border-bottom: 1px solid $border;
+    height: remify($headerHeight);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .home-link {
+      position: relative;
+      height: 100%;
+      width: remify(67);
+      margin: 0 auto;
+      background-size: contain;
+      background-position: 50% 50%;
+    }
+    .icon-wrap {
+      height: remify($headerHeight);
+      width: remify($headerHeight);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .menu-close {
+      display: none;
+    }
+    form {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: stretch;
+      background: white;
+      transform: translateX(101%);
+      transition: transform 0.33s ease;
+      input {
+        @include stripped-input;
+      }
+      button {
+        margin: 0;
+      }
+      &.show-me {
+        transform: translateY(0%);
+        transition: transform 0.33s ease;
+      }
+    }
+  }
+  .nav-body {
+    padding-top: remify($headerHeight);
+    position: relative;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: transform 0.33s ease;
+    display: flex;
+    flex-flow: column nowrap;
+    ul {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      border-bottom: 1px solid $border;
+      &.main,
+      &.sub {
+        padding: 1rem 0;
+      }
+      &.social,
+      &.sub {
+        border-bottom: none;
+      }
+      li {
+        width: 100%;
+        &.lem-home {
+          display: none;
+        }
+      }
+      a:not(.button) {
+        padding: 0.5rem 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &.main a {
+        text-transform: uppercase;
+        font-size: remify(30);
+      }
+      &.sub a {
+        text-transform: capitalize;
+        font-size: remify(20);
+        &.button {
+          margin: 1rem 0;
+        }
+      }
+      &.social {
+        flex-flow: row nowrap;
+        justify-content: center;
+        padding: 1rem 0;
+        li {
+          width: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        a {
+          font-size: remify(15);
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: remify(28);
+          height: remify(28);
+          border: 2px solid $primary;
+          margin: 0 0.25rem;
+        }
+      }
+    }
+  }
+  &.show-me {
+    min-height: 100vh;
+    overflow-y: scroll;
+    .menu-close {
+      display: block;
+    }
+    .menu {
+      display: none;
+    }
+    .nav-body {
+      transform: translateY(0);
+      transition: transform 0.33s ease;
+    }
+  }
+}

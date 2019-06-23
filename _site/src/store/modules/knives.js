@@ -10,7 +10,7 @@ const getters = {
 
 const mutations = {
   GET_KNIVES(state, doc) {
-    state.knives = doc;
+    state.knives.push(doc);
   }
 };
 

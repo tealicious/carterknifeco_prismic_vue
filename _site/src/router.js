@@ -10,14 +10,6 @@ export default new Router({
       path: "/",
       name: "home",
       component: PageWrapper
-    },
-    {
-      path: "/:page",
-      component: PageWrapper
-    },
-    {
-      path: "/knife/:knife",
-      component: PageWrapper
     }
   ]
 });

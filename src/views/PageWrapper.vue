@@ -16,8 +16,21 @@ export default {
       return this.$route;
     }
   },
+  watch: {
+    $route(to) {
+      this.$store.dispatch("getSinglePage", to.params.page || to.name);
+      this.show = false;
+      this.$nextTick(() => {
+        this.show = true;
+      });
+    }
+  },
   beforeCreate() {
-    this.$store.dispatch("getSinglePage", this.$route.name);
+    console.log(this.$route);
+    this.$store.dispatch(
+      "getSinglePage",
+      this.$route.params.page || this.$route.name
+    );
   }
 };
 </script>

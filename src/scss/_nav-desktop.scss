@@ -1,0 +1,171 @@
+$logoSize: 75%;
+
+$deskheaderheight: 100;
+$subHeaderHeight: 40;
+body {
+  padding-top: remify($headerHeight);
+  @media (--large) {
+    padding-top: remify($deskheaderheight);
+  }
+}
+nav.main.desktop {
+  .blog_search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    input {
+      @include stripped-input;
+      padding-left: 0;
+      transition: width 0.2s ease;
+      width: remify(150);
+      max-width: remify(100);
+      transition: all 0.2s ease;
+      &:focus {
+        max-width: 100%;
+      }
+    }
+    button {
+      margin-left: -1.5rem;
+      padding-right: 0;
+      &:hover,
+      &:active,
+      &:focus {
+        background: none;
+      }
+    }
+  }
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  @media (--large) {
+    display: block;
+  }
+  border-bottom: 1px solid $border;
+  [container] {
+    overflow: visible;
+  }
+  .fa-chevron-left {
+    margin-right: remify(5);
+  }
+  .sub,
+  .main,
+  ul,
+  form,
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+  }
+  .logo-wrap {
+    justify-content: center;
+    border-right: 1px solid $border;
+  }
+  .logo-wrap a {
+    width: $logoSize;
+    height: $logoSize;
+    background-position: 50% 50%;
+    background-size: contain;
+  }
+  .blog_search {
+    margin-left: auto;
+    input {
+      @include stripped-input;
+      padding-left: 0;
+      transition: width 0.2s ease;
+      width: remify(150);
+      &:focus {
+        transition: width 0.2s ease;
+        width: remify(200);
+      }
+    }
+    button {
+      margin-left: -1.5rem;
+      &:hover,
+      &:active,
+      &:focus {
+        background: none;
+      }
+    }
+  }
+  .sub,
+  .main {
+    padding: 0;
+    a {
+      @include remove-link-styles;
+      @include create-link-styles($primary, $secondary, none);
+    }
+  }
+  .sub {
+    height: remify($subHeaderHeight);
+    max-height: remify($subHeaderHeight);
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      left: -1rem;
+      bottom: 0;
+      height: 1px;
+      width: 100vw;
+      background-color: $border;
+    }
+    a {
+      text-transform: capitalize;
+    }
+  }
+  .main {
+    height: remify($headerHeight);
+    ul,
+    li,
+    a {
+      height: 100%;
+    }
+    ul {
+      margin-left: -1rem;
+    }
+    li,
+    a {
+      display: flex;
+      align-items: center;
+    }
+    a {
+      padding: 0 1rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+  .social {
+    margin-left: 1.5rem;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: remify(24);
+      height: remify(24);
+      border: 2px solid $primary;
+      margin-right: 0.5rem;
+      transition: all 0.2s ease;
+      &:hover {
+        border-color: $secondary;
+      }
+    }
+    li:last-of-type {
+      a {
+        margin: 0;
+      }
+    }
+  }
+}
+
+nav.main.desktop {
+  .sub {
+    transition: transform 0.333s ease,
+      max-height 0.333s cubic-bezier(0.68, -0.1, 0.265, 1.55);
+  }
+  &.has-scrolled {
+    .sub {
+      max-height: 0;
+      transform: translateY(-100px);
+    }
+  }
+}

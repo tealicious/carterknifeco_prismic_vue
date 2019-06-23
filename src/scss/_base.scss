@@ -10,6 +10,16 @@
   margin-top: unset;
 }
 
+.desktop {
+  @media (max-width: 959px) {
+    display: none;
+  }
+}
+.mobile {
+  @media (--large) {
+    display: none;
+  }
+}
 body,
 html {
   height: 100%;
