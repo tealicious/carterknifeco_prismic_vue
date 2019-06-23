@@ -37,6 +37,23 @@ export default class Api {
     });
   }
 
+  getKnives() {
+    return Prismic.getApi(prismicEndpoint).then(api => {
+      return api
+        .query(Prismic.Predicates.at("document.type", "knife_page"), {
+          pageSize: 100
+        })
+        .then(res =>
+          res.results.map(res => {
+            return { ...res.data, id: res.id, uid: res.uid };
+          })
+        )
+        .catch(err => {
+          throw err;
+        });
+    });
+  }
+
   getSingleBySlug(slug) {
     return Prismic.getApi(prismicEndpoint).then(api => {
       return api

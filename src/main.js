@@ -16,6 +16,7 @@ Vue.component("pre-fetch-router-link", PreFetchRouterLink);
 new Vue({
   beforeCreate() {
     store.dispatch("getGlobal");
+    store.dispatch("getKnives");
   },
   router,
   store,
