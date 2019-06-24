@@ -65,12 +65,22 @@
 @mixin create-link-styles($color, $hover-color, $text-decoration: underline) {
   color: $color;
   cursor: pointer;
+  svg {
+    * {
+      fill: $color;
+    }
+  }
   &:focus,
   &:active,
   &.active,
   &:hover {
     text-decoration: $text-decoration;
     color: $hover-color;
+    svg {
+      * {
+        fill: $hover-color;
+      }
+    }
   }
 }
 

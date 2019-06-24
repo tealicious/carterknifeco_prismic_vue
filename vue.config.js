@@ -8,7 +8,7 @@ const conciseEmulationPlugins = [
 ];
 const path = require("path");
 module.exports = {
-  baseUrl: process.env.NODE_ENV === "development" ? "/carterknifeco/" : "/",
+  baseUrl: "/",
   productionSourceMap: false,
   configureWebpack: {
     resolve: {

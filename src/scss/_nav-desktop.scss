@@ -1,4 +1,4 @@
-$logoSize: 75%;
+$logoSize: 85%;
 
 $deskheaderheight: 100;
 $subHeaderHeight: 40;
@@ -27,6 +27,7 @@ nav.main.desktop {
     button {
       margin-left: -1.5rem;
       padding-right: 0;
+      background: none;
       &:hover,
       &:active,
       &:focus {

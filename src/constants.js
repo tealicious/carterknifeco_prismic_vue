@@ -1,4 +1,5 @@
 export const prismicEndpoint = "https://carterknifeco.cdn.prismic.io/api/v2";
+export const firstSectionBottom = window.innerWidth * 0.5625 * 0.62222;
 
 import linkResolver from "@/utils/link-resolver";
 import htmlSerializer from "@/utils/html-serializer";

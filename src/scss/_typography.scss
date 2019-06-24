@@ -1,0 +1,29 @@
+body {
+  * {
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
+    color: $black;
+  }
+  p {
+    font-family: "Raleway", sans-serif;
+  }
+  strong,
+  b {
+    font-weight: bolder;
+  }
+}
+.title {
+  text-transform: capitalize;
+}
+
+a {
+  @include remove-link-styles;
+  @include create-link-styles($secondary, $primary, none);
+}
+
+h1,
+h2,
+h3 {
+  color: $primary;
+  font-weight: 400;
+}

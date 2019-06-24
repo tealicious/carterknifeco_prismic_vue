@@ -9,7 +9,6 @@
         <div v-html="section.description_serialized"></div>
       </div>
     </div>
-    <!-- <div container>{{>molecules-breadcrumb}}</div> -->
   </section>
 </template>
 <script>

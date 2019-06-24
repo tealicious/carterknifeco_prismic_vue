@@ -1,8 +1,8 @@
 :root {
   font-size: $base-em + px;
-  // @media (--extra-large) {
-  //   font-size: $base-em-l + px;
-  // }
+  @media (--extra-large) {
+    font-size: $base-em-l + px;
+  }
 }
 
 * + * {
@@ -23,12 +23,6 @@
 body,
 html {
   height: 100%;
-  font-family: "Work Sans", sans-serif;
-}
-p {
-  font-family: "Open Sans", sans-serif;
-}
-body {
 }
 
 @media (--large) {

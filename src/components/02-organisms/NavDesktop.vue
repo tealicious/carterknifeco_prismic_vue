@@ -2,10 +2,14 @@
   <nav class="main desktop">
     <div container>
       <div grid="row wrap">
-        <div column="2" class="logo-wrap">
-          <a href="/" aria-describedby="home link" style="background-image: url('/images/icons/logo.svg')"></a>
+        <div column="3" class="logo-wrap">
+          <pre-fetch-router-link
+            :page="nav[0].page"
+            :class="`${nav[0].page.uid}`"
+            :style="`background-image: url('${logo.url}')`"
+          />
         </div>
-        <div column="10" class="nav-wrapper">
+        <div column="9" class="nav-wrapper">
           <div column="12" class="sub">
             <a href="#" class="back-home">
               <i class="fas fa-chevron-left"></i>home
@@ -53,6 +57,6 @@
 </template>
 <script>
 export default {
-  props: ["nav"]
+  props: ["nav", "logo"]
 };
 </script>

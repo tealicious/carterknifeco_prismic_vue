@@ -2,6 +2,7 @@ nav.main {
   z-index: 999;
   background-color: white;
   svg {
+    fill: $primary;
     * {
       fill: $primary;
     }
@@ -13,6 +14,17 @@ nav.main {
     }
     input {
       color: $black;
+    }
+  }
+  button {
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover,
+    &:active,
+    &:focus {
+      background: none;
     }
   }
 }

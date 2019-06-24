@@ -36,6 +36,8 @@
   }
   h1 {
     @include fontSizing(36, 43, 50, 60);
+    margin-top: 0;
+    margin-bottom: 2rem;
   }
   .content {
     display: flex;

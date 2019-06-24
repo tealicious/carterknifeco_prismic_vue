@@ -5,12 +5,11 @@
         <i class="fas fa-bars menu"></i>
         <i class="fas fa-times menu-close"></i>
       </div>
-      <a
-        class="home-link"
-        href="/"
-        aria-describedby="home link"
-        style="background-image: url('/images/icons/logo.svg')"
-      ></a>
+      <pre-fetch-router-link
+        :page="nav[0].page"
+        :class="`${nav[0].page.uid} home-link`"
+        :style="`background-image: url('${logo.url}')`"
+      />
       <div class="icon-wrap" id="search-open">
         <i class="fas fa-search search"></i>
       </div>
@@ -47,6 +46,6 @@
 </template>
 <script>
 export default {
-  props: ["nav"]
+  props: ["nav", "logo"]
 };
 </script>

@@ -1,0 +1,109 @@
+.button:disabled,
+.button[disabled] {
+  color: gray !important;
+  border-color: gray !important;
+  pointer-events: none !important;
+  cursor: default !important;
+  &:hover {
+    &:before {
+      height: 0 !important;
+      width: 0 !important;
+    }
+  }
+}
+@mixin button-states($background-color, $hoverColor) {
+  background-color: $background-color;
+  color: white;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $hoverColor;
+    color: white;
+  }
+}
+@mixin underline-states($color) {
+  color: $color;
+  &:after,
+  &:before {
+    background-color: $color;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color;
+  }
+}
+@mixin button-styles {
+  @include remove-link-styles;
+  z-index: 1;
+  position: relative;
+  line-height: 1;
+  text-transform: uppercase !important;
+  > * {
+    line-height: 1;
+  }
+  cursor: pointer;
+  letter-spacing: 1.61px;
+  color: white;
+  background: $primary;
+  transition: background-color 0.2s ease;
+}
+
+.button {
+  @include remove-link-styles;
+  @include button-styles;
+  @include button-states($secondary, $primary);
+  font-weight: bold;
+  font-size: remify(18) !important;
+  padding: 1rem remify(40);
+  text-align: center;
+  display: block;
+  font-weight: normal;
+}
+
+.underline-button {
+  @include button-styles;
+  @include underline-states($red);
+  text-transform: capitalize;
+  padding: 0.4rem 0 0.4rem;
+  font-size: remify(22);
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+  }
+  &:after {
+    left: 0;
+    transition: width 0s ease 0s;
+  }
+  &:before {
+    right: 0;
+    transition: width 0.2s ease;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    &:after,
+    &:before {
+      width: 100%;
+    }
+    &:after {
+      transition: width 0.2s ease;
+    }
+    &:before {
+      transition: width 0s ease 0.2s;
+    }
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  .button {
+    margin: 0;
+  }
+}

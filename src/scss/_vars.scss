@@ -11,18 +11,20 @@ $full-grid: true;
 
 $white: #f5f5f5;
 $offwhite: #f5f5f5;
-$blue: #498897;
+$blue: lighten(#498897, 50%);
+$dark_blue: darken(#498897, 5%);
 $black: #4a4a4a;
 $gray: #efefef;
-$busInterior: lighten(#c9b69c, 20%);
-$background: $busInterior;
+$busInterior: darken(#c9b69c, 10%);
+$light_busInterior: lighten(#c9b69c, 20%);
 $red: red;
 $tan: #7c5743;
 $green: #1f5732;
 $border: #d8d8d8;
-$primary: $blue;
-$secondary: $tan;
-$footerBG: $green;
+$background: $light_busInterior;
+$primary: $dark_blue;
+$secondary: $busInterior;
+$footerBG: $primary;
 
 $headerHeight: 60;
 $deskheaderheight: 80;

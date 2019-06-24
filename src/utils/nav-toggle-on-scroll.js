@@ -1,4 +1,5 @@
 import debounce from "./debounce";
+import { firstSectionBottom } from "@/constants";
 export default function() {
   var scrollpos =
     window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
@@ -14,7 +15,6 @@ export default function() {
     nav.classList.remove("has-scrolled");
   }
   let lastScrollTop = 0;
-  let firstSectionBottom = window.innerWidth * 0.5625 * 0.62222;
   window.addEventListener(
     "scroll",
     function() {
