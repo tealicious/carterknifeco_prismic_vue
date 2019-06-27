@@ -1,10 +1,14 @@
 import Vue from "vue";
 import Router from "vue-router";
 import PageWrapper from "./views/PageWrapper.vue";
+import KnifeWrapper from "./views/KnifeWrapper.vue";
 
 Vue.use(Router);
 
 export default new Router({
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0 };
+  },
   routes: [
     {
       path: "/",
@@ -17,7 +21,7 @@ export default new Router({
     },
     {
       path: "/knife/:knife",
-      component: PageWrapper
+      component: KnifeWrapper
     }
   ]
 });

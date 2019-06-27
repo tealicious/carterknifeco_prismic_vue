@@ -68,6 +68,19 @@ export const preloadImages = function(array) {
   }
 };
 
+export const setSimpleSectionRichText = function(section) {
+  const keys = Object.keys(section);
+  keys.map(pKey => {
+    if (Array.isArray(section[pKey])) {
+      section[`${pKey}_serialized`] = prismicDOM.RichText.asHtml(
+        section[pKey],
+        linkResolver,
+        simpleHtmlSerializer
+      );
+    }
+  });
+  return section;
+};
 export const setSectionRichText = function(section) {
   const keys = Object.keys(section);
   keys.map(key => {

@@ -11,9 +11,6 @@ export default {
   computed: {
     page() {
       return this.$store.getters.currentPage;
-    },
-    route() {
-      return this.$route;
     }
   },
   watch: {
@@ -26,7 +23,6 @@ export default {
     }
   },
   beforeCreate() {
-    console.log(this.$route);
     this.$store.dispatch(
       "getSinglePage",
       this.$route.params.page || this.$route.name

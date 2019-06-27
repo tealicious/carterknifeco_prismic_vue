@@ -6,6 +6,7 @@
       :featuredKnifeLink="page.featured_knife.primary.featured_knife"
       v-if="featuredKnife"
     ></featured-knife-hero>
+    <card-grid v-if="page.show_knives_card_grid"/>
     <!-- <hero v-for="(hero, i) in loopablePage.hero" :section="hero.primary" :key="`hero${i}`" :style="order(hero)"></hero> -->
   </div>
 </template>
@@ -13,12 +14,14 @@
 <script>
 import Hero from "@sections/Hero";
 import FeaturedKnifeHero from "@sections/FeaturedKnifeHero";
+import CardGrid from "@sections/CardGrid";
 import { createLoopableSections } from "@/constants";
 export default {
   props: ["page"],
   components: {
     Hero,
-    FeaturedKnifeHero
+    FeaturedKnifeHero,
+    CardGrid
   },
   computed: {
     loopablePage() {

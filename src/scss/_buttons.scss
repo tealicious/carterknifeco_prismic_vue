@@ -61,45 +61,6 @@
   font-weight: normal;
 }
 
-.underline-button {
-  @include button-styles;
-  @include underline-states($red);
-  text-transform: capitalize;
-  padding: 0.4rem 0 0.4rem;
-  font-size: remify(22);
-  position: relative;
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    height: 2px;
-    width: 0%;
-  }
-  &:after {
-    left: 0;
-    transition: width 0s ease 0s;
-  }
-  &:before {
-    right: 0;
-    transition: width 0.2s ease;
-  }
-  &:hover,
-  &:focus,
-  &:active {
-    &:after,
-    &:before {
-      width: 100%;
-    }
-    &:after {
-      transition: width 0.2s ease;
-    }
-    &:before {
-      transition: width 0s ease 0.2s;
-    }
-  }
-}
-
 .button-wrapper {
   display: flex;
   justify-content: center;

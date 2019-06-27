@@ -1,4 +1,4 @@
-$logoSize: 85%;
+$logoSize: 95%;
 
 $deskheaderheight: 100;
 $subHeaderHeight: 40;
@@ -59,12 +59,12 @@ nav.main.desktop {
     align-items: center;
   }
   .logo-wrap {
-    justify-content: center;
+    justify-content: flex-start;
     border-right: 1px solid $border;
   }
   .logo-wrap a {
     width: $logoSize;
-    height: $logoSize;
+    height: 100%;
     background-position: 50% 50%;
     background-size: contain;
   }

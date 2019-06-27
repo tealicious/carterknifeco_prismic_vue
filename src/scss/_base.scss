@@ -25,11 +25,65 @@ html {
   height: 100%;
 }
 
+#app {
+  background-color: white;
+}
+
 @media (--large) {
   [column~="l-fifths"] {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 20%;
     flex: 0 1 20%;
     max-width: 20%;
+  }
+}
+
+section:not(.hero):not(.page-hero) {
+  a {
+    font-weight: bold;
+  }
+  &.page-header {
+    padding: 0;
+    h1 {
+      padding: 2rem 0;
+    }
+    @media (--medium) {
+      h1 {
+        padding: 3rem 0;
+      }
+    }
+  }
+
+  @media (--medium) {
+    &.card-grid {
+      padding-bottom: 1rem;
+    }
+    &.related-posts {
+      padding-bottom: 3rem;
+    }
+    padding: 3rem 0;
+    [container] {
+      overflow: visible;
+    }
+    &.content {
+      border-top: 1px solid $border;
+      &.page {
+        border-top: 0;
+        padding-top: 0;
+      }
+      &.post {
+        @media (--large) {
+          padding-bottom: 4rem;
+          [column] {
+            *:first-child {
+              margin-top: 0 !important;
+            }
+          }
+        }
+        @media (--extra-large) {
+          padding-bottom: 6rem;
+        }
+      }
+    }
   }
 }

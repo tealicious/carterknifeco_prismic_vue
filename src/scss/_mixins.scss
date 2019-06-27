@@ -225,12 +225,6 @@ $navHeight: remify(65);
 @mixin button-colors($bg, $color: white) {
   color: $color;
   background-color: $bg;
-  // background-image: linear-gradient(
-  //   to right,
-  //   $bg 0%,
-  //   lighten($bg, 19.125%) 51%,
-  //   $bg 100%
-  // );
   &.bordered {
     border: 3px solid $color;
     position: relative;

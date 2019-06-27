@@ -9,11 +9,11 @@
             :style="`background-image: url('${logo.url}')`"
           />
         </div>
-        <div column="9" class="nav-wrapper">
+        <div column="9" class="back-home">
           <div column="12" class="sub">
-            <a href="#" class="back-home">
+            <pre-fetch-router-link :page="nav[0].page" :class="`${nav[0].page.uid}`">
               <i class="fas fa-chevron-left"></i>home
-            </a>
+            </pre-fetch-router-link>
             <form class="blog_search">
               <input type="text" class="universal_search" name="universal_search" placeholder="Search">
               <button type="submit">
