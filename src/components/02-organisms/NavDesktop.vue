@@ -49,6 +49,7 @@
                 <pre-fetch-router-link :page="page.page" :class="`${page.page.uid}`">{{page.page.uid}}</pre-fetch-router-link>
               </li>
             </ul>
+            <button class="button small gold">contact</button>
           </div>
         </div>
       </div>

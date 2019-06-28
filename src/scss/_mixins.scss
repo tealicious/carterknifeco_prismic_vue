@@ -423,3 +423,14 @@ $navHeight: remify(65);
     @include button-colors($space_dark);
   }
 }
+
+@mixin button-states($background-color, $hoverColor) {
+  background-color: $background-color;
+  color: white;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $hoverColor;
+    color: white;
+  }
+}

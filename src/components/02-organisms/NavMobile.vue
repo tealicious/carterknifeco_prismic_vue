@@ -25,21 +25,17 @@
     </div>
     <div class="nav-body">
       <ul class="main">
-        <!-- {% for link in site.data.main-nav %}
-        <li class="{{link.modifier}}">
-          <a href="{{link.url}}">{{link.name}}</a>
+        <li v-for="(page, i) in nav" :key="`${page}-${i}`">
+          <pre-fetch-router-link :page="page.page" :class="`${page.page.uid}`">{{page.page.uid}}</pre-fetch-router-link>
         </li>
-        {% endfor %}
-      </ul>
+        <!--  </ul>
       <ul class="sub">
-        {% assign homepage = site.pages | where: '_page', 'homepage' %}
-        {% for page in homepage %}
         <li>
           <a href="{{page.external_links.main_home_url}}" target="_blank">lem home</a>
         </li>
         <li>{% include molecules/social-links.html %}</li>
-        <a href="{{page.external_links.shop_url}}" class="button" target="_blank">shop products</a>
-        {% endfor %}-->
+        <a href="{{page.external_links.shop_url}}" class="button" target="_blank">shop products</a> -->
+        <button class="button small">contact</button>
       </ul>
     </div>
   </nav>

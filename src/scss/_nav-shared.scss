@@ -16,15 +16,4 @@ nav.main {
       color: $black;
     }
   }
-  button {
-    background: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:hover,
-    &:active,
-    &:focus {
-      background: none;
-    }
-  }
 }

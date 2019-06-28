@@ -11,16 +11,6 @@
     }
   }
 }
-@mixin button-states($background-color, $hoverColor) {
-  background-color: $background-color;
-  color: white;
-  &:hover,
-  &:focus,
-  &:active {
-    background-color: $hoverColor;
-    color: white;
-  }
-}
 @mixin underline-states($color) {
   color: $color;
   &:after,
@@ -53,6 +43,9 @@
   @include remove-link-styles;
   @include button-styles;
   @include button-states($secondary, $primary);
+  &.blue {
+    @include button-states($primary, $secondary);
+  }
   font-weight: bold;
   font-size: remify(18) !important;
   padding: 1rem remify(40);
