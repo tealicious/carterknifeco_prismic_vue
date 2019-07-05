@@ -1,0 +1,111 @@
+section.content,
+.empty-results {
+  .block-img {
+    float: left;
+    img {
+      width: 50%;
+    }
+  }
+  img {
+    float: left;
+  }
+  ul,
+  ol {
+    @include fontSizing(18, 28);
+    margin-bottom: 1rem;
+    li {
+      margin-bottom: 0.5rem;
+    }
+    @media (--large) {
+      margin-bottom: 1.5rem;
+    }
+  }
+  ol {
+    li {
+      padding-left: $gutter;
+      position: relative;
+      &:before {
+        left: 0;
+        top: 0;
+        position: absolute;
+      }
+    }
+  }
+  p {
+    clear: both;
+    margin-bottom: 1rem;
+    @media (--large) {
+      margin-bottom: 1.5rem;
+    }
+  }
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+  .cms-embed {
+    margin: 2rem 0;
+  }
+
+  [column]:not(.signup) {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      clear: both;
+      font-weight: 600;
+      text-transform: capitalize;
+      margin: 2rem 0 1rem !important;
+      @media (--large) {
+        margin: 3rem 0 1.5rem !important;
+      }
+    }
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $primary;
+  }
+  h4,
+  h5 {
+    text-transform: uppercase;
+  }
+  h2 {
+    @include fontSizing(40, 40);
+  }
+  h3 {
+    @include fontSizing(30, 30);
+  }
+  h4 {
+    @include fontSizing(24, 24);
+  }
+  h5 {
+    color: $secondary;
+    @include fontSizing(22, 22);
+  }
+  h6 {
+    @include fontSizing(18, 18);
+  }
+}
+.empty-results {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.post {
+  .signup {
+    margin-bottom: 2rem;
+    @media (--large) {
+      margin-bottom: 4rem;
+    }
+  }
+  img {
+    @media (max-width: 600px) {
+      margin: 1rem 0;
+      min-width: 100%;
+      max-width: 100%;
+      float: none;
+    }
+  }
+}

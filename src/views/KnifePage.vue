@@ -1,6 +1,7 @@
 <template>
   <div>
     <featured-knife-hero :section="knife" :isPage="true"></featured-knife-hero>
+    <section></section>
   </div>
 </template>
 

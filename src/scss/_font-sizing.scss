@@ -1,0 +1,55 @@
+h1 {
+  @include fontSizing(38, 44, 62, 66);
+}
+
+.hero.card {
+  @media (--extra-extra-large) {
+    h1 {
+      font-size: 4vw;
+    }
+    p {
+      font-size: 1.25vw;
+    }
+    h5 {
+      font-size: 1.75vw;
+    }
+  }
+}
+
+p {
+  @include fontSizing(18, 28);
+}
+
+.button {
+  font-size: remify(26);
+}
+
+select {
+  font-size: remify(16);
+}
+
+nav.main.desktop .main a {
+  font-size: remify(18);
+}
+
+.signup h3 {
+  @include fontSizing(41, 46, 51, 51);
+}
+
+section.content .signup h3 {
+  @include fontSizing(41, 46, 51, 51);
+}
+
+.button {
+  font-size: remify(26);
+}
+
+.related-posts {
+  h2 {
+    @media (max-width: 767px) {
+      margin: 2.5rem 0 2rem !important;
+    }
+    text-transform: capitalize;
+    @include fontSizing(40, 40);
+  }
+}

@@ -2,7 +2,6 @@
   <div id="app">
     <app-nav v-if="nav" :nav="nav.items" :logo="nav.primary.logo_image"/>
     <router-view/>
-    <div style="height:200vh" class="off_background"></div>
   </div>
 </template>
 

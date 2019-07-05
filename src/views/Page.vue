@@ -8,6 +8,12 @@
     ></featured-knife-hero>
     <card-grid v-if="page.show_knives_card_grid"/>
     <!-- <hero v-for="(hero, i) in loopablePage.hero" :section="hero.primary" :key="`hero${i}`" :style="order(hero)"></hero> -->
+    <rich-text
+      v-for="(rich_text, i) in loopablePage.rich_text"
+      :section="rich_text.primary.content_serialized"
+      :key="`rich_text${i}`"
+      :style="order(rich_text)"
+    />
   </div>
 </template>
 
@@ -15,13 +21,15 @@
 import Hero from "@sections/Hero";
 import FeaturedKnifeHero from "@sections/FeaturedKnifeHero";
 import CardGrid from "@sections/CardGrid";
+import RichText from "@sections/RichText";
 import { createLoopableSections } from "@/constants";
 export default {
   props: ["page"],
   components: {
     Hero,
     FeaturedKnifeHero,
-    CardGrid
+    CardGrid,
+    RichText
   },
   computed: {
     loopablePage() {
