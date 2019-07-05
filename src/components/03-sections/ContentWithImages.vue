@@ -1,8 +1,8 @@
 <template>
   <section class="post-body content post off_background">
     <div container>
-      <div grid="row wrap">
-        <div column="xs-12 s-12" class="base-font-rules">
+      <div grid="row wrap justify-center">
+        <div column="xs-12 s-12 l-11" class="base-font-rules">
           <p v-for="(item, i) in section" :key="i">
             <template v-for="(text, j) in item.content">
               <template v-if="j===0">
