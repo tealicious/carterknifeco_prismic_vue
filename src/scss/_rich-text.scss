@@ -1,32 +1,31 @@
 section.content,
 .empty-results {
+  overflow: hidden;
   .block-img img {
     width: 100%;
   }
-  img {
-    width: 50%;
-    float: left;
-    margin: 0 2rem 2rem 0;
-  }
-  ul,
-  ol {
-    @include fontSizing(18, 28);
-    margin-bottom: 1rem;
-    li {
-      margin-bottom: 0.5rem;
+  p {
+    img {
+      @media (--medium) {
+        width: 55%;
+      }
     }
-    @media (--large) {
-      margin-bottom: 1.5rem;
+    &:nth-of-type(odd) {
+      img {
+        @media (--medium) {
+          float: left;
+          margin: 0 $gutter 0 0;
+          margin-left: $gutter * -2;
+        }
+      }
     }
-  }
-  ol {
-    li {
-      padding-left: $gutter;
-      position: relative;
-      &:before {
-        left: 0;
-        top: 0;
-        position: absolute;
+    &:nth-of-type(even) {
+      img {
+        @media (--medium) {
+          float: right;
+          margin: 0 0 0 $gutter;
+          margin-right: $gutter * -2;
+        }
       }
     }
   }
@@ -35,6 +34,7 @@ section.content,
     margin-bottom: 1rem;
     @media (--large) {
       margin-bottom: 1.5rem;
+      @include fontSizing(20, 30);
     }
   }
   iframe {
