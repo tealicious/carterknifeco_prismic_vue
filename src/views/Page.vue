@@ -14,6 +14,12 @@
       :key="`rich_text${i}`"
       :style="order(rich_text)"
     />
+    <content-with-images
+      v-for="(content_with_images, i) in loopablePage.content_with_images"
+      :section="content_with_images.items"
+      :key="`content_with_images${i}`"
+      :style="order(content_with_images)"
+    />
   </div>
 </template>
 
@@ -22,6 +28,7 @@ import Hero from "@sections/Hero";
 import FeaturedKnifeHero from "@sections/FeaturedKnifeHero";
 import CardGrid from "@sections/CardGrid";
 import RichText from "@sections/RichText";
+import ContentWithImages from "@sections/ContentWithImages";
 import { createLoopableSections } from "@/constants";
 export default {
   props: ["page"],
@@ -29,7 +36,8 @@ export default {
     Hero,
     FeaturedKnifeHero,
     CardGrid,
-    RichText
+    RichText,
+    ContentWithImages
   },
   computed: {
     loopablePage() {
