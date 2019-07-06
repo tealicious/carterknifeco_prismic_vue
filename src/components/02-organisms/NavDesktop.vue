@@ -46,7 +46,7 @@
           <div column="12" class="main">
             <ul>
               <li v-for="(page, i) in nav" :key="`${page}-${i}`">
-                <pre-fetch-router-link :page="page.page" :class="`${page.page.uid}`">{{page.page.uid}}</pre-fetch-router-link>
+                <pre-fetch-router-link :page="page.page" :class="`${page.page.uid}`">{{page.page.uid | nodash}}</pre-fetch-router-link>
               </li>
             </ul>
             <button class="button small gold">contact</button>

@@ -26,7 +26,7 @@
     <div class="nav-body">
       <ul class="main">
         <li v-for="(page, i) in nav" :key="`${page}-${i}`">
-          <pre-fetch-router-link :page="page.page" :class="`${page.page.uid}`">{{page.page.uid}}</pre-fetch-router-link>
+          <pre-fetch-router-link :page="page.page" :class="`${page.page.uid}`">{{page.page.uid | nodash}}</pre-fetch-router-link>
         </li>
         <!--  </ul>
       <ul class="sub">
@@ -34,7 +34,7 @@
           <a href="{{page.external_links.main_home_url}}" target="_blank">lem home</a>
         </li>
         <li>{% include molecules/social-links.html %}</li>
-        <a href="{{page.external_links.shop_url}}" class="button" target="_blank">shop products</a> -->
+        <a href="{{page.external_links.shop_url}}" class="button" target="_blank">shop products</a>-->
         <button class="button small">contact</button>
       </ul>
     </div>

@@ -14,6 +14,11 @@ Vue.component("app-image", AppImage);
 Vue.component("background-image", AppBackgroundImage);
 Vue.component("pre-fetch-router-link", PreFetchRouterLink);
 Vue.use(lineClamp);
+Vue.filter("nodash", function(value) {
+  if (!value) return "";
+  value = value.toString();
+  return value.replace(/\-/g, " ");
+});
 
 async function init() {
   await store.dispatch("getGlobal");
