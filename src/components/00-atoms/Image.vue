@@ -1,11 +1,21 @@
 <template>
-  <img :src="setImage()" :alt="setAlt()" @load="loaded">
+  <div>
+    <img :src="setImage()" :alt="setAlt()" @load="loaded" @click="showFullImage(true)" style="cursor:zoom-in;">
+    <div
+      class="faux-image full-image"
+      :style="`background-image: url(${setImage()})`"
+      :aria-label="setAlt()"
+      @click.self="showFullImage(false)"
+      v-if="fullImage"
+    />
+  </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      finishedLoading: false
+      finishedLoading: false,
+      fullImage: false
     };
   },
   props: {
@@ -33,6 +43,9 @@ export default {
       return window.innerWidth < 768 && this.image.mobile
         ? this.image.mobile.alt
         : this.image.alt;
+    },
+    showFullImage(someBool) {
+      this.fullImage = someBool;
     }
   }
 };

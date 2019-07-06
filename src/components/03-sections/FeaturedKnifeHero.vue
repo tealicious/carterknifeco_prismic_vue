@@ -1,7 +1,7 @@
 <template>
   <section class="page-hero page-hero featured-knife-hero">
     <div class="hero-wrap">
-      <div @click="showFullImage(true)" :style="isPage ? 'cursor:zoom-in;' : ''">
+      <div>
         <background-image class="image-wrap" :image="section.image"/>
       </div>
       <pre-fetch-router-link :page="featuredKnifeLink" class="content" v-if="featuredKnifeLink">
@@ -15,23 +15,10 @@
         <h1>{{section.uid.replace(/-/g, ' ')}}</h1>
       </div>
     </div>
-    <background-image :image="section.image" class="full-image" @click.native="showFullImage(false)" v-if="fullImage"/>
   </section>
 </template>
 <script>
 export default {
-  props: ["section", "featuredKnifeLink", "isPage"],
-  data() {
-    return {
-      fullImage: false
-    };
-  },
-  methods: {
-    showFullImage(someBool) {
-      if (this.isPage) {
-        this.fullImage = someBool;
-      }
-    }
-  }
+  props: ["section", "featuredKnifeLink"]
 };
 </script>

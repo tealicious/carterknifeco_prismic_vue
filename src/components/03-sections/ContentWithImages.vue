@@ -6,12 +6,12 @@
           <p v-for="(item, i) in section" :key="i">
             <template v-for="(text, j) in item.content">
               <template v-if="j===0">
-                <app-image :image="item.image" :key="j"/>
+                <app-image :image="item.image" :key="Math.random()"/>
                 {{text.text}}
               </template>
               <template v-else>{{text.text}}</template>
-              <br :key="j">
-              <br :key="j">
+              <br :key="Math.random()">
+              <br :key="Math.random()">
             </template>
           </p>
         </div>
