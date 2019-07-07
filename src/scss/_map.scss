@@ -1,14 +1,53 @@
 $mapheight: remify($headerHeight);
 
 .map {
-  p {
+  overflow: hidden;
+  p,
+  a {
     font-family: "Oswald", sans-serif;
-    color: inherit;
+    p {
+      @include fontSizing(18, 18);
+    }
   }
-  .card {
-    .card-header {
+  .card-wrap {
+    padding: $gutter / 2 $gutter;
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+  .map-card {
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0 0 ($gutter / 2);
+    box-shadow: 2px 4px 2px 0 rgba(0, 0, 0, 0.2);
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    .card-header,
+    .list-group-item a {
       display: flex;
       align-items: center;
+      padding: 0 ($gutter / 2);
+      p {
+        margin: 0;
+      }
+    }
+    .card-header,
+    .list-group-item:first-of-type {
+      margin-bottom: $gutter / 2;
+      padding-bottom: $gutter / 2;
+      border-bottom: 1px solid $border;
+    }
+    .card-header {
+      background-color: lighten($background, 2.5%);
+      padding-top: $gutter / 2;
+      cursor: pointer;
+      font-weight: bold;
+      svg {
+        color: #e661ac;
+      }
     }
   }
   .infoWindow {
@@ -62,8 +101,19 @@ $mapheight: remify($headerHeight);
       position: -webkit-sticky; // required for Safari
       position: sticky;
       top: 0; // required as well.
-      padding-top: 60px;
-      margin-top: -60px;
+      padding-top: $gutter;
+      margin-top: $gutter * -1;
+    }
+  }
+  [column] {
+    @media (--medium) {
+      &:first-of-type {
+        padding-right: 0;
+        border-right: 2px solid $border;
+      }
+      &:last-of-type {
+        padding-left: 0;
+      }
     }
   }
 }

@@ -47,8 +47,7 @@
   }
 }
 
-a.card,
-.card a {
+a.card {
   @include remove-link-styles;
 }
 
@@ -113,73 +112,6 @@ a.card,
   .card {
     h5 {
       margin-bottom: 0 !important;
-    }
-    order: 13;
-    &:nth-child(1) {
-      order: 7;
-    }
-    &:nth-child(2) {
-      order: 3;
-    }
-    &:nth-child(3) {
-      order: 13;
-    }
-    &:nth-child(4) {
-      order: 1;
-    }
-    &:nth-child(5) {
-      order: 2;
-    }
-    &:nth-child(6) {
-      order: 4;
-    }
-    &:nth-child(7) {
-      order: 5;
-    }
-    &:nth-child(8) {
-      order: 6;
-    }
-    &:nth-child(9) {
-      order: 10;
-    }
-    &:nth-child(10) {
-      order: 11;
-    }
-    &:nth-child(11) {
-      order: 12;
-    }
-  }
-  .signup {
-    order: 9;
-    @media (--large) {
-      order: -1;
-    }
-  }
-}
-
-.card.lockup {
-  position: relative;
-  display: flex;
-  > div {
-    box-shadow: none !important;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    padding-bottom: 182.9%;
-    background-position: 50% 0%;
-    background-size: contain;
-  }
-  &.a {
-    justify-content: center;
-  }
-  &.b {
-    > div {
-      @media (--extra-large) {
-        padding-bottom: 185.9%;
-        background-size: cover;
-      }
     }
   }
 }

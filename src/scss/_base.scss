@@ -39,9 +39,6 @@ html {
 }
 
 section:not(.hero):not(.page-hero) {
-  a {
-    font-weight: bold;
-  }
   &.page-header {
     padding: 0;
     h1 {

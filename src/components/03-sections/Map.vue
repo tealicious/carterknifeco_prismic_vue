@@ -1,7 +1,7 @@
 <template>
   <section class="map off_background" style="padding:0;">
     <div grid="row wrap" ref="mapContainer">
-      <div column="xs-12 s-12 m-8">
+      <div column="xs-12 s-12 m-8 l-9">
         <gmap-map ref="map" :center="center " :options="{styles: styles}" :zoom="15">
           <gmap-info-window
             :options="infoOptions "
@@ -40,12 +40,12 @@
           ></gmap-marker>
         </gmap-map>
       </div>
-      <div column="xs-12 s-12 m-4">
+      <div column="xs-12 s-12 m-4 l-3">
         <div class="location-boxes">
-          <div :key="i" v-for="(m, i) in markers">
-            <div class="card mb-3" @click="toggleInfoWindow(m,i)">
+          <div :key="i" v-for="(m, i) in markers" class="card-wrap">
+            <div class="map-card mb-3" @click="toggleInfoWindow(m,i)">
               <div class="card-header">
-                <div class="mr-3">
+                <div class="_mrxs">
                   <font-awesome-icon icon="map-marker" />
                 </div>
                 {{m.business_name}}
@@ -53,7 +53,7 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   <a :href="m.map_url.url" target="_blank ">
-                    <div class="mr-3">
+                    <div class="_mrxs">
                       <font-awesome-icon icon="car" />
                     </div>
                     <div v-html="m.address_serialized" />
@@ -61,10 +61,9 @@
                 </li>
                 <li v-if="m.web_url" class="list-group-item">
                   <a :href="m.web_url.url" target="_blank">
-                    <div class="mr-3">
+                    <div class="_mrxs">
                       <font-awesome-icon icon="external-link-alt" />
-                    </div>
-                    <p>Website</p>
+                    </div>Website
                   </a>
                 </li>
               </ul>
@@ -91,7 +90,7 @@ export default {
   props: ["markers"],
   data() {
     return {
-      icon: "//maps.google.com/mapfiles/ms/icons/red.png",
+      icon: "//maps.google.com/mapfiles/ms/icons/pink.png",
       infoWindowLogo: infoWindowIcon,
       infoContent: "",
       infoSubContent: "",
@@ -111,8 +110,8 @@ export default {
         }
       },
       center: {
-        lat: 44.0508424,
-        lng: -121.3125494
+        lat: 44.055426,
+        lng: -121.31712
       },
       styles: mapStyles
     };

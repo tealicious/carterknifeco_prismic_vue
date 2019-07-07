@@ -1,8 +1,8 @@
 body {
+  color: $black;
   * {
     font-family: "Oswald", sans-serif;
     font-weight: 300;
-    color: $black;
   }
   p {
     font-family: "Raleway", sans-serif;
@@ -18,7 +18,7 @@ body {
 
 a {
   @include remove-link-styles;
-  @include create-link-styles($secondary, $primary, none);
+  @include create-link-styles($primary, $secondary, none);
 }
 
 h1,
