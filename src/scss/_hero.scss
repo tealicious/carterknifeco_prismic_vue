@@ -76,6 +76,9 @@
       margin: auto;
     }
   }
+  + section {
+    border-top: 1px solid $border;
+  }
 }
 
 a.content,

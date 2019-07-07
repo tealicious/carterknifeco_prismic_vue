@@ -1,7 +1,5 @@
 $logoSize: 95%;
 
-$deskheaderheight: 100;
-$subHeaderHeight: 40;
 body {
   padding-top: remify($headerHeight);
   @media (--large) {
@@ -133,6 +131,7 @@ nav.main.desktop {
       padding: 0 1rem;
       text-transform: uppercase;
       font-weight: bold;
+      font-size: remify(16) !important;
     }
     .button {
       margin-left: auto;

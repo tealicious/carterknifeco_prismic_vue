@@ -12,33 +12,34 @@
         <div column="9" class="back-home">
           <div column="12" class="sub">
             <pre-fetch-router-link :page="nav[0].page" :class="`${nav[0].page.uid}`">
-              <i class="fas fa-chevron-left"></i>home
+              <font-awesome-icon icon="chevron-left" />home
             </pre-fetch-router-link>
             <form class="blog_search">
-              <input type="text" class="universal_search" name="universal_search" placeholder="Search">
+              <input type="text" class="universal_search" name="universal_search" placeholder="Search" />
               <button type="submit">
                 <i class="fas fa-search"></i>
+                <font-awesome-icon icon="search" />
               </button>
             </form>
             <ul class="social">
               <li>
                 <a href="#" target="_blank">
-                  <i class="fab fa-facebook"></i>
+                  <font-awesome-icon :icon="['fab','facebook-f']" />
                 </a>
               </li>
               <li>
                 <a href="#" target="_blank">
-                  <i class="fab fa-pinterest"></i>
+                  <font-awesome-icon :icon="['fab','pinterest']" />
                 </a>
               </li>
               <li>
                 <a href="#" target="_blank">
-                  <i class="fab fa-youtube"></i>
+                  <font-awesome-icon :icon="['fab','youtube']" />
                 </a>
               </li>
               <li>
                 <a href="#" target="_blank">
-                  <i class="fab fa-instagram"></i>
+                  <font-awesome-icon :icon="['fab','instagram']" />
                 </a>
               </li>
             </ul>

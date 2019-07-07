@@ -6,7 +6,8 @@
       :featuredKnifeLink="page.featured_knife.primary.featured_knife"
       v-if="featuredKnife"
     ></featured-knife-hero>
-    <card-grid v-if="page.show_knives_card_grid"/>
+    <card-grid v-if="page.show_knives_card_grid" />
+    <app-map v-if="page.local_sellers" :markers="page.local_sellers.items" />
     <!-- <hero v-for="(hero, i) in loopablePage.hero" :section="hero.primary" :key="`hero${i}`" :style="order(hero)"></hero> -->
     <rich-text
       v-for="(rich_text, i) in loopablePage.rich_text"
@@ -29,6 +30,7 @@ import FeaturedKnifeHero from "@sections/FeaturedKnifeHero";
 import CardGrid from "@sections/CardGrid";
 import RichText from "@sections/RichText";
 import ContentWithImages from "@sections/ContentWithImages";
+import AppMap from "@sections/Map";
 import { createLoopableSections } from "@/constants";
 export default {
   props: ["page"],
@@ -37,7 +39,8 @@ export default {
     FeaturedKnifeHero,
     CardGrid,
     RichText,
-    ContentWithImages
+    ContentWithImages,
+    AppMap
   },
   computed: {
     loopablePage() {

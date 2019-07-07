@@ -57,6 +57,9 @@ nav.main.mobile {
       }
       button {
         margin: 0;
+        background: white;
+        display: flex;
+        align-items: center;
       }
       &.show-me {
         transform: translateY(0%);

@@ -19,6 +19,58 @@ Vue.filter("nodash", function(value) {
   value = value.toString();
   return value.replace(/\-/g, " ");
 });
+// font awesome icons
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import {
+  faCaretDown,
+  faCaretRight,
+  faCaretLeft,
+  faChevronDown,
+  faChevronLeft,
+  faSpinner,
+  faSearch,
+  faBars,
+  faTimes,
+  faMapMarker,
+  faExternalLinkAlt,
+  faCar
+} from "@fortawesome/free-solid-svg-icons";
+import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
+import {
+  faTwitter,
+  faPinterest,
+  faLinkedin,
+  faFacebook,
+  faFacebookF,
+  faYoutube,
+  faYoutubeSquare,
+  faInstagram
+} from "@fortawesome/free-brands-svg-icons";
+library.add(
+  faTwitter,
+  faLinkedin,
+  faPinterest,
+  faFacebook,
+  faYoutube,
+  faYoutubeSquare,
+  faInstagram,
+  faFacebookF,
+  faCaretDown,
+  faCaretRight,
+  faCaretLeft,
+  faChevronDown,
+  faChevronLeft,
+  faSpinner,
+  faPlayCircle,
+  faSearch,
+  faTimes,
+  faBars,
+  faMapMarker,
+  faExternalLinkAlt,
+  faCar
+);
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 async function init() {
   await store.dispatch("getGlobal");

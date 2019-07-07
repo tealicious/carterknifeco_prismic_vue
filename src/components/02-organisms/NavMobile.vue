@@ -2,8 +2,8 @@
   <nav class="main mobile" id="mobile-main-nav">
     <div class="header">
       <div class="icon-wrap" id="menu-toggle">
-        <i class="fas fa-bars menu"></i>
-        <i class="fas fa-times menu-close"></i>
+        <font-awesome-icon icon="bars" class="menu" />
+        <font-awesome-icon icon="times" class="menu-close" />
       </div>
       <pre-fetch-router-link
         :page="nav[0].page"
@@ -11,15 +11,15 @@
         :style="`background-image: url('${logo.url}')`"
       />
       <div class="icon-wrap" id="search-open">
-        <i class="fas fa-search search"></i>
+        <font-awesome-icon icon="search" />
       </div>
       <form id="mobile_search" class="blog_search">
-        <input type="text" class="universal_search" name="universal_search" placeholder="Search">
+        <input type="text" class="universal_search" name="universal_search" placeholder="Search" />
         <button type="submit">
-          <i class="fas fa-search"></i>
+          <font-awesome-icon icon="search" />
         </button>
         <button class="search-close">
-          <i class="fas fa-times"></i>
+          <font-awesome-icon icon="times" />
         </button>
       </form>
     </div>
