@@ -13,7 +13,7 @@ export default [
     elementType: "all",
     stylers: [
       {
-        color: "#f2ede6"
+        color: "#f2f2f2"
       }
     ]
   },
