@@ -20,7 +20,7 @@
     "concise-ui": "^0.2.1",
     "concise-utils": "^1.0.0",
     "concise.css": "^4.1.2",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.13.1",
     "postcss-custom-media": "^6.0.0",
     "postcss-input-range": "^4.0.0",
     "postcss-lh": "^1.1.4",
